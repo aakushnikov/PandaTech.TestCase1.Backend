@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaTech.TestCase1", "Pand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaTech.TestCase1.WebApi", "PandaTech.TestCase1.WebApi\PandaTech.TestCase1.WebApi.csproj", "{8C94B2A5-44F8-4446-8AF9-948301702C42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaTech.TestCase1.Model", "PandaTech.TestCase1.Model\PandaTech.TestCase1.Model.csproj", "{90989D9C-9DD1-4C60-8D58-F386D52D5803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaTech.TestCase1.Data", "PandaTech.TestCase1.Data\PandaTech.TestCase1.Data.csproj", "{93BC74E8-A8C9-437A-87D8-02275CBE507A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{8C94B2A5-44F8-4446-8AF9-948301702C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C94B2A5-44F8-4446-8AF9-948301702C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C94B2A5-44F8-4446-8AF9-948301702C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90989D9C-9DD1-4C60-8D58-F386D52D5803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90989D9C-9DD1-4C60-8D58-F386D52D5803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90989D9C-9DD1-4C60-8D58-F386D52D5803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90989D9C-9DD1-4C60-8D58-F386D52D5803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BC74E8-A8C9-437A-87D8-02275CBE507A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BC74E8-A8C9-437A-87D8-02275CBE507A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BC74E8-A8C9-437A-87D8-02275CBE507A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BC74E8-A8C9-437A-87D8-02275CBE507A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

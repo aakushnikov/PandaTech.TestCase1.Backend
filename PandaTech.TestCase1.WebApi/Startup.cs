@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using FluentValidation;
 using PandaTech.TestCase1.Configuration;
+using PandaTech.TestCase1.Data;
 using PandaTech.TestCase1.Extensions;
 using Serilog;
 
@@ -16,7 +17,7 @@ public static class Startup
 
         services.ConfigureApplicationCookie(config =>
         {
-            config.Cookie.Name = $"{EnvSettings.Namespace}.Cookie";
+            config.Cookie.Name = $"{EnvSettings.AssemblyName}.Cookie";
         });
         
         services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
@@ -33,6 +34,8 @@ public static class Startup
                 policy.AllowAnyOrigin();
             });
         });
+
+        services.AddSingleton<IStorage>(new MemoryStorage());
         
         services.AddSwaggerGen();
         
@@ -47,11 +50,9 @@ public static class Startup
         
         app.UseRouting();
         
-        app.UseSerilogRequestLogging();
-        
         app.UseSwagger();
         app.UseSwaggerUI();
 
-        app.MapDefaultControllerRoute();
+        app.MapControllers();
     }
 }

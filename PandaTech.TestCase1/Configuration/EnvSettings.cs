@@ -7,12 +7,11 @@ public static class EnvSettings
     private static readonly Type[] SupportedTypes =
         { typeof(string), typeof(int), typeof(long), typeof(double), typeof(bool) };
     
-    public static readonly string Namespace;
-
+    public static readonly string AssemblyName;
 
     static EnvSettings()
     {
-        Namespace = typeof(EnvSettings).Namespace ?? string.Empty;
+        AssemblyName = typeof(EnvSettings).Assembly.GetName().Name ?? string.Empty;
     }
 
     private static T InitializeEnvAssert<T>(this T? def, string name, T? defValue = default)
@@ -29,7 +28,7 @@ public static class EnvSettings
 
     private static T? InitializeEnv<T>(this T? def, string name, T? defValue = default)
     {
-        var stringValue = Environment.GetEnvironmentVariable($"{Namespace}.{name}");
+        var stringValue = Environment.GetEnvironmentVariable($"{AssemblyName}.{name}");
 
         if (string.IsNullOrEmpty(stringValue)) return defValue;
 
@@ -38,7 +37,7 @@ public static class EnvSettings
 
     private static T[] InitializeArrayEnv<T>(this T[] def, string name, T? defValue = default)
     {
-        var stringValue = Environment.GetEnvironmentVariable($"{Namespace}.{name}");
+        var stringValue = Environment.GetEnvironmentVariable($"{AssemblyName}.{name}");
 
         if (string.IsNullOrEmpty(stringValue)) return Array.Empty<T>();
 

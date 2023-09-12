@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Reflection;
+using Microsoft.Extensions.Logging;
 using PandaTech.TestCase1.Configuration;
 using Serilog;
 using Serilog.Events;
@@ -16,13 +17,13 @@ public static class Logger
             .MinimumLevel.Override("System", LogEventLevel.Debug)
             .Enrich.FromLogContext()
             .Enrich.WithMachineName()
-            .Enrich.WithProperty("Service", EnvSettings.Namespace)
+            .Enrich.WithProperty("Service", EnvSettings.AssemblyName)
             .WriteTo.Console(
                 restrictedToMinimumLevel: LogEventLevel.Debug,
                 theme: ConsoleTheme.None
             )
             .WriteTo.File(
-                $"{EnvSettings.Namespace}.log",
+                $"{Assembly.GetExecutingAssembly().Location}.log",
                 LogEventLevel.Debug)
             .CreateLogger();
     }

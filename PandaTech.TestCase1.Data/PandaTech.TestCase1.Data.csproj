@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PandaTech.TestCase1.Model\PandaTech.TestCase1.Model.csproj" />
+      <ProjectReference Include="..\PandaTech.TestCase1\PandaTech.TestCase1.csproj" />
+    </ItemGroup>
+
+</Project>

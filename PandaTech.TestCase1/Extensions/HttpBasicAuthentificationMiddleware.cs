@@ -21,8 +21,12 @@ public class AuthenticationMiddleware
     }
     
     
-    private bool ConfirmCredentials(HttpContext context)
+    private static bool ConfirmCredentials(HttpContext context)
     {
+        if (context.Request.Path.HasValue)
+            if (!context.Request.Path.Value.Contains("api", StringComparison.OrdinalIgnoreCase))
+                return true;
+        
         var authHeader = context.Request.Headers["Authorization"].ToString();
 
         if (string.IsNullOrEmpty(authHeader))
