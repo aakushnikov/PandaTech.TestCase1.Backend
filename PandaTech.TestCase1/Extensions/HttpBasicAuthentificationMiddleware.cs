@@ -23,9 +23,9 @@ public class AuthenticationMiddleware
     
     private static bool ConfirmCredentials(HttpContext context)
     {
-        if (context.Request.Path.HasValue)
-            if (!context.Request.Path.Value.Contains("api", StringComparison.OrdinalIgnoreCase))
-                return true;
+        // if (context.Request.Path.HasValue)
+        //     if (!context.Request.Path.Value.Contains("api", StringComparison.OrdinalIgnoreCase))
+        //         return true;
         
         var authHeader = context.Request.Headers["Authorization"].ToString();
 
@@ -47,9 +47,6 @@ public class AuthenticationMiddleware
         var username = credentials.First();
         var password = credentials.Last();
 
-        if (username != "test" || password != "test")
-            return false;
-
-        return true;
+        return username == "test" && password == "test";
     }
 }

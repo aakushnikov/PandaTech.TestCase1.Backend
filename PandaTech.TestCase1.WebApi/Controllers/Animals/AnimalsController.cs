@@ -20,6 +20,14 @@ public sealed class AnimalsController : ControllerBase
     public AnimalsController(IMediator mediator) =>
         _mediator = mediator;
     
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [Description("Tests api accesebility for authentificated users")]
+    public IActionResult Test()
+    {
+        return Ok();
+    }
+    
     [HttpGet("/{page:int}-{limit:int}")]
     [ProducesResponseType(typeof(GetAllAnimalsOut), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -2,7 +2,6 @@
 using LanguageExt.Common;
 using MediatR;
 using PandaTech.TestCase1.Data;
-using PandaTech.TestCase1.Model.Animals;
 
 namespace PandaTech.TestCase1.WebApi.Controllers.Animals.GetAllAnimals;
 
@@ -22,7 +21,7 @@ public sealed class GetAllAnimalsHandler : IRequestHandler<GetAllAnimalsQuery, E
 
         return new GetAllAnimalsOut
         {
-            Animals = _storage.Animals.Skip(request.Page * request.Limit).Take(request.Limit),
+            Animals = _storage.Animals.Skip((request.Page - 1) * request.Limit).Take(request.Limit),
             Page = request.Page,
             Limit = request.Limit,
             Total = _storage.Animals.Length(),

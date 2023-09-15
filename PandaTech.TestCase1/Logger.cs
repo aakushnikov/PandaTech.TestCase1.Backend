@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using Microsoft.Extensions.Logging;
 using PandaTech.TestCase1.Configuration;
 using Serilog;
 using Serilog.Events;

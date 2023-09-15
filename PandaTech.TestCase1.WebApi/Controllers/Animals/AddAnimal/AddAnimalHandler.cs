@@ -3,7 +3,6 @@ using LanguageExt.Common;
 using MediatR;
 using PandaTech.TestCase1.Data;
 using PandaTech.TestCase1.Model.Animals;
-using Unit = MediatR.Unit;
 
 namespace PandaTech.TestCase1.WebApi.Controllers.Animals.AddAnimal;
 

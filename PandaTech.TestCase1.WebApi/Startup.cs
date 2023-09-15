@@ -3,7 +3,6 @@ using FluentValidation;
 using PandaTech.TestCase1.Configuration;
 using PandaTech.TestCase1.Data;
 using PandaTech.TestCase1.Extensions;
-using Serilog;
 
 namespace PandaTech.TestCase1.WebApi;
 
@@ -44,10 +43,10 @@ public static class Startup
 
     public static void Initialize(this WebApplication app)
     {
-        app.UseCors();
-
-        app.UseMiddleware<AuthenticationMiddleware>();
+        app.UseCors("AllowAll");
         
+        app.UseMiddleware<AuthenticationMiddleware>();
+
         app.UseRouting();
         
         app.UseSwagger();
